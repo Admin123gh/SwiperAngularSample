@@ -30,6 +30,6 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
     artifactName: SwiperAngularSample
-    targetPath: '$(Build.ArtifactStagingDirectory)/src'
+    targetPath: '$(Build.ArtifactStagingDirectory)'
     publishLocation: 'pipeline'
   displayName: 'PublishNpmArtifact'
