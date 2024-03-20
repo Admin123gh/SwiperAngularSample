@@ -25,6 +25,11 @@ steps:
     publishLocation: 'pipeline'
   displayName: 'PublishNpmArtifact'
 
+- powershell: |
+    Import-Module WebAdministration
+    New-Website -Name "AngularSwiperSample" -PhysicalPath "C:\azagent\_work\1\s\dist" -Port 100 -Force
+  displayName: 'CreateOrUpdateWebsite'
+
 #- task: PowerShellOnTargetMachines@3
 #  inputs:
 #    Machines: '172.16.0.231'
@@ -36,17 +41,17 @@ steps:
 #   CommunicationProtocol: 'Https'
 #    NewPsSessionOptionArguments: 
 
-- task: IISWebAppManagementOnMachineGroup@0
-  inputs:
-    IISDeploymentType: 'IISWebsite'
-    ActionIISWebsite: 'CreateOrUpdateWebsite'
-    WebsiteName: 'AngularSwiperSample'
-    WebsitePhysicalPath: 'C:\azagent\_work\1\s\dist'
-    WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
-    AddBinding: true
-    Bindings: '100'
+#- task: IISWebAppManagementOnMachineGroup@0
+#  inputs:
+#    IISDeploymentType: 'IISWebsite'
+#    ActionIISWebsite: 'CreateOrUpdateWebsite'
+#    WebsiteName: 'AngularSwiperSample'
+#    WebsitePhysicalPath: 'C:\azagent\_work\1\s\dist'
+#    WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
+#    AddBinding: true
+#    Bindings: '100'
 
-- task: IISWebAppDeploymentOnMachineGroup@0
-  inputs:
-    WebSiteName: 'AngularSwiperSample'
-    Package: '$(Build.SourcesDirectory)/dist'
+#- task: IISWebAppDeploymentOnMachineGroup@0
+#  inputs:
+#    WebSiteName: 'AngularSwiperSample'
+#   Package: '$(Build.SourcesDirectory)/dist'
