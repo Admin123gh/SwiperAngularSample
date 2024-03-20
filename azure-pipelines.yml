@@ -33,7 +33,7 @@ steps:
     InlineScript: |
       Import-Module WebAdministration
       New-Website -Name "AngularSwiperSample" -PhysicalPath "C:\azagent\_work\1\s\dist\swiper-sample" -Port 100 -HostHeader "172.16.0.231:100"
-    CommunicationProtocol: 'Http'
+    CommunicationProtocol: 'Https'
     NewPsSessionOptionArguments: 
 
 #- task: IISWebAppManagementOnMachineGroup@0
