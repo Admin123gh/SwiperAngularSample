@@ -18,9 +18,9 @@ steps:
     npm run build
   displayName: 'NpmBuild'
 
-#- task: PublishPipelineArtifact@1
-#  inputs:
-#    artifactName: SwiperAngularSample
-#    targetPath: '$(Build.SourcesDirectory)/dist'
-#    publishLocation: 'pipeline'
-#  displayName: 'PublishNpmArtifact'
+- task: PublishPipelineArtifact@1
+  inputs:
+    artifactName: SwiperAngularSample
+    targetPath: '$(Build.SourcesDirectory)/dist'
+    publishLocation: 'pipeline'
+  displayName: 'PublishNpmArtifact'
