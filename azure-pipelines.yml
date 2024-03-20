@@ -27,14 +27,13 @@ steps:
 
 - task: IISWebAppManagementOnMachineGroup@0
   inputs:
-    EnableIIS: true
     IISDeploymentType: 'IISWebsite'
     ActionIISWebsite: 'CreateOrUpdateWebsite'
     WebsiteName: 'AngularSwiperSample'
     WebsitePhysicalPath: 'C:\azagent\_work\1\s\dist'
     WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
     AddBinding: true
-    Bindings: '120'
+    Bindings: '172.16.0.231:100'
 
 - task: IISWebAppDeploymentOnMachineGroup@0
   inputs:
