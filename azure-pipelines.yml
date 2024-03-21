@@ -25,16 +25,16 @@ steps:
     publishLocation: 'pipeline'
   displayName: 'PublishNpmArtifact'
 
-- task: PowerShell@2
-  displayName: 'Run PowerShell Script as Administrator'
-  inputs:
-    targetType: 'inline'
-    script: |
-      Import-Module WebAdministration
-      New-Website -Name "AngularSwiperSample" -PhysicalPath "C:\azagent\_work\1\s\dist" -Port 100 -Force
-    errorActionPreference: 'stop'
-    pwsh: true
-    runAsAdministrator: true
+#- task: PowerShell@2
+#  displayName: 'Run PowerShell Script as Administrator'
+#  inputs:
+#    targetType: 'inline'
+#    script: |
+#      Import-Module WebAdministration
+#      New-Website -Name "AngularSwiperSample" -PhysicalPath "C:\azagent\_work\1\s\dist" -Port 100 -Force
+#    errorActionPreference: 'stop'
+#    pwsh: true
+#    runAsAdministrator: true
 
 
 #- task: PowerShellOnTargetMachines@3
